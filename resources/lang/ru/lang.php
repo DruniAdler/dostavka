@@ -921,7 +921,7 @@ return [
     'payment_mode' => 'Типы оплат',
     'payment_mode_default' => 'Наличные и онлайн оплаты',
     'payment_mode_help' => 'Выберите желаемый тип оплаты',
-    'payment_mode_only_cash' => 'Только наличными',
+    'payment_mode_only_cash' => 'Оплата по договору',
     'payment_mode_only_online' => 'Только онлайн оплаты',
     'payment_order_done' => 'Заказ оплачен',
     'payment_order_waiting' => 'Заказ еще не оплачен',
