@@ -1175,8 +1175,8 @@ return [
     'SberPay' => 'Sber online',
     'Cash_on_Delivery' => 'Cash on Delivery',
     'Card_on_Delivery' => 'Card on Delivery',
-    'new_order'=>'New Order #',
+    'new_order'=>'Новый Заказ #',
     'to'=>' to ',
     'Of'=>' of ' ,
-    'Has_been_assigned_to_you'=>' has been assigned to you',
+    'Has_been_assigned_to_you'=>'был назначен вам',
 ];
