@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Log;
+
 class Sber
 {
 
@@ -80,7 +82,6 @@ class Sber
 
         $response = curl_exec($ch);
         curl_close($ch);
-        Log::error(json_decode($response));
         return json_decode($response);
 
     }
