@@ -56,15 +56,15 @@ class SberPayController extends ParentOrderController
                     return redirect()->away($sberAnswer->formUrl);
                 }
 
-                Flash::error("Error processing SberPay user not found");
+                Flash::error("Error 1 processing SberPay user not found");
                 return redirect(route('payments.failed'));
 
             }else{
-                Flash::error("Error processing SberPay user not found");
+                Flash::error("Error 2 processing SberPay user not found");
                 return redirect(route('payments.failed'));
             }
         }catch (\Exception $e){
-            Flash::error("Error processing SberPay payment for your order :" . $e->getMessage());
+            Flash::error("Error 3 processing SberPay payment for your order :" . $e->getMessage());
             return redirect(route('payments.failed'));
         }
     }
