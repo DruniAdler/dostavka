@@ -22,7 +22,7 @@ class Sber
             ."&returnUrl=".rawurlencode($returnUrl)
             ."&pageView=".$pageView
             ."&sessionTimeoutSecs=1200";
-
+            Log::info($url);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
