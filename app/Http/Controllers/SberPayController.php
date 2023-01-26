@@ -86,7 +86,8 @@ class SberPayController extends ParentOrderController
         $this->order->delivery_address_id = $deliveryAddressId;
 
         $sberOrderStatus = Sber::getOrderStatus($data['orderId']);
-        Log::error(var_dump($sberOrderStatus));
+        Log::info(print_r($sberOrderStatus, true));
+    
         if ($sberOrderStatus && isset($sberOrderStatus->OrderNumber)
             && $sberOrderStatus->OrderStatus == 2
             && $sberOrderStatus->ErrorCode == 0
