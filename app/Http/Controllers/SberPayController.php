@@ -17,6 +17,7 @@ use App\Repositories\DeliveryAddressRepository;
 use Illuminate\Http\Request;
 use Flash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
 
 
 class SberPayController extends ParentOrderController
@@ -85,7 +86,7 @@ class SberPayController extends ParentOrderController
         $this->order->delivery_address_id = $deliveryAddressId;
 
         $sberOrderStatus = Sber::getOrderStatus($data['orderId']);
-
+        Log::error($sberOrderStatus);
         if ($sberOrderStatus && isset($sberOrderStatus->OrderNumber)
             && $sberOrderStatus->OrderStatus == 2
             && $sberOrderStatus->ErrorCode == 0
