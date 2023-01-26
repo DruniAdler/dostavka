@@ -117,7 +117,7 @@ class SberPayController extends ParentOrderController
      */
     private function getPaymentDescription($sber_payment_id, $data): string
     {
-        $description = "CardholderName: " . $data->cardholderName . "</br>";
+        $description = "CardholderName: " . "CARDHOLDER NAME" . "</br>";
         $description .= "DepositAmount: " . ($data->depositAmount / 100) . "</br>";
         $description .= "Id: " . $sber_payment_id . "</br>";
         $description .= trans('lang.order').": " . $data->OrderNumber;
