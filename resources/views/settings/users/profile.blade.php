@@ -83,13 +83,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link active" href="{!! url()->current() !!}"><i class="fa fa-cog mr-2"></i>{{trans('lang.app_setting')}}</a>
                                 </li>
-                                @hasrole('client')
-                                <div class="ml-auto d-inline-flex">
-                                    <li class="nav-item">
-                                        <a class="nav-link pt-1" href="{!! route('restaurants.create') !!}"><i class="fa fa-check-o"></i> {{trans('lang.app_setting_become_restaurant_owner')}}</a>
-                                    </li>
-                                </div>
-                                @endhasrole
                             </ul>
                         </div>
                         <div class="card-body">

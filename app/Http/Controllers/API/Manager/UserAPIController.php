@@ -72,6 +72,29 @@ class UserAPIController extends Controller
 
     }
 
+    function destroy($id, Request $request)
+    {
+        $user = $this->userRepository->findWithoutFail($id);
+
+        if (empty($user)) {
+            return $this->sendResponse([
+                'error' => true,
+                'code' => 404,
+            ], 'User not found');
+        }
+
+        try {
+            // Удаление связанных с пользователем записей в пользовательских полях (если они используются)
+            $user->customFieldsValues()->delete();
+
+            // Удаление пользователя
+            $this->userRepository->delete($id);
+        } catch (ValidatorException $e) {
+            return $this->sendError($e->getMessage(), 401);
+        }
+
+        return $this->sendResponse([], __('lang.deleted_successfully', ['operator' => __('lang.user')]));
+    }
     /**
      * Create a new user instance after a valid registration.
      *

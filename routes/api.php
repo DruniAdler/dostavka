@@ -72,6 +72,7 @@ Route::middleware('auth:api')->group(function () {
             Route::post('users/{id}', 'API\UserAPIController@update');
             Route::resource('faq_categories', 'API\FaqCategoryAPIController');
             Route::resource('faqs', 'API\FaqAPIController');
+            Route::delete('delete/{id}', 'API\Driver\UserAPIController@destroy');
         });
     });
     Route::group(['middleware' => ['role:manager']], function () {
@@ -82,9 +83,11 @@ Route::middleware('auth:api')->group(function () {
             Route::resource('restaurants', 'API\Manager\RestaurantAPIController');
             Route::resource('faq_categories', 'API\FaqCategoryAPIController');
             Route::resource('faqs', 'API\FaqAPIController');
+            Route::delete('delete/{id}', 'API\Manager\UserAPIController@destroy');
         });
     });
     Route::post('users/{id}', 'API\UserAPIController@update');
+    Route::delete('delete/{id}', 'API\UserAPIController@destroy');
 
     Route::resource('order_statuses', 'API\OrderStatusAPIController');
 
